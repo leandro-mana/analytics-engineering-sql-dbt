@@ -1,0 +1,18 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+        args: [--allow-multiple-documents]
+      - id: check-added-large-files
+      - id: check-merge-conflict
+
+  - repo: https://github.com/sqlfluff/sqlfluff
+    rev: 3.3.1
+    hooks:
+      - id: sqlfluff-lint
+        additional_dependencies: ["dbt-core>=1.9", "dbt-postgres>=1.9", "sqlfluff-templater-dbt>=3.0"]
+      - id: sqlfluff-fix
+        additional_dependencies: ["dbt-core>=1.9", "dbt-postgres>=1.9", "sqlfluff-templater-dbt>=3.0"]

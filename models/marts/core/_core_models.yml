@@ -1,0 +1,49 @@
+version: 2
+
+models:
+  - name: fct_orders
+    description: >
+      Order fact table combining order data with payment amounts.
+      One row per order with cash, credit, and total payment breakdowns.
+    columns:
+      - name: order_id
+        description: Primary key.
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: Foreign key to dim_customers.
+      - name: order_date
+        description: Date the order was placed.
+      - name: status
+        description: Current order status.
+      - name: cash_amount
+        description: Total successful cash payments for the order.
+      - name: credit_amount
+        description: Total successful credit payments for the order.
+      - name: total_amount
+        description: Total successful payments for the order.
+      - name: is_order_completed
+        description: "{{ doc('is_order_completed') }}"
+
+  - name: dim_customers
+    description: >
+      Customer dimension table enriched with order history metrics.
+    columns:
+      - name: customer_id
+        description: Primary key.
+        tests:
+          - unique
+          - not_null
+      - name: first_name
+        description: Customer first name.
+      - name: last_name
+        description: Customer last name.
+      - name: first_order_date
+        description: Date of the customer's first order.
+      - name: last_order_date
+        description: Date of the customer's most recent order.
+      - name: number_of_orders
+        description: Total number of orders placed by the customer.
+      - name: lifetime_value
+        description: Total amount paid across all successful orders.

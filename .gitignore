@@ -15,23 +15,11 @@ ENV/
 # Poetry
 poetry.lock
 
-# Jupyter
-.ipynb_checkpoints/
-
 # IDE
 .idea/
 .vscode/
 *.swp
 *.swo
-
-# mypy
-.mypy_cache/
-
-# ruff
-.ruff_cache/
-
-# pytest
-.pytest_cache/
 
 # OS
 .DS_Store
@@ -39,6 +27,11 @@ Thumbs.db
 
 # Environment
 .env
+
+# dbt
+target/
+dbt_packages/
+logs/
 
 # Book PDF/ePub in docs/ — do not commit copyrighted material
 docs/*.pdf

@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: int_payment_type_amount_per_order
+    description: >
+      Payment amounts aggregated per order, split by payment type (cash vs credit).
+      Only successful payments are included in the totals.
+    columns:
+      - name: order_id
+        description: Primary key — one row per order.
+        tests:
+          - unique
+          - not_null
+      - name: cash_amount
+        description: Total successful cash payments for the order.
+      - name: credit_amount
+        description: Total successful credit payments for the order.
+      - name: total_amount
+        description: Total successful payments for the order (cash + credit).

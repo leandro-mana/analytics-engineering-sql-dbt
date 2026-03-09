@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: stg_omni__channels
+    description: Staged channel data.
+  - name: stg_omni__customers
+    description: Staged customer data.
+  - name: stg_omni__products
+    description: Staged product data.
+  - name: stg_omni__purchase_history
+    description: Staged purchase history.
+  - name: stg_omni__visit_history
+    description: Staged visit history.

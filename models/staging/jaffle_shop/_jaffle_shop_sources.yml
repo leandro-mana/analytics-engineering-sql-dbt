@@ -1,0 +1,30 @@
+version: 2
+
+sources:
+  - name: jaffle_shop
+    schema: public_raw
+    description: Raw Jaffle Shop data loaded via dbt seeds.
+    tables:
+      - name: raw_customers
+        description: Raw customer data.
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+      - name: raw_orders
+        description: Raw order data.
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+          - name: status
+            tests:
+              - accepted_values:
+                  values:
+                    - completed
+                    - shipped
+                    - returned
+                    - placed
+                    - return_pending
