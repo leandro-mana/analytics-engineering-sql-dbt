@@ -1,5 +1,13 @@
 # Analytics Engineering with SQL and dbt
 
+[![Python 3.12+](https://img.shields.io/badge/python-3.12%2B-blue.svg)](https://www.python.org/downloads/)
+[![dbt 1.9+](https://img.shields.io/badge/dbt-1.9%2B-FF694B.svg)](https://www.getdbt.com/)
+[![PostgreSQL 16](https://img.shields.io/badge/postgresql-16-336791.svg)](https://www.postgresql.org/)
+[![Code Style: sqlfluff](https://img.shields.io/badge/code%20style-sqlfluff-4B8BBE.svg)](https://sqlfluff.com/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Chapters](https://img.shields.io/badge/chapters-6-orange.svg)](docs/)
+[![Models](https://img.shields.io/badge/models-15-brightgreen.svg)](models/)
+
 Study notes and hands-on dbt project based on *Analytics Engineering with SQL and dbt* by Rui Machado & Hélder Russa (O'Reilly, 2023).
 
 This repository is an **opinionated, runnable dbt project** — not a rewrite of the book. Theory lives in the chapter READMEs; the real value is in the working models, tests, and data pipeline you can run locally.
