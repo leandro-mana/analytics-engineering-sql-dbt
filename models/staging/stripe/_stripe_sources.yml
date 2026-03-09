@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: stripe
+    schema: public_raw
+    description: Raw Stripe payment data loaded via dbt seeds.
+    tables:
+      - name: raw_payments
+        description: Raw payment data from Stripe.
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null

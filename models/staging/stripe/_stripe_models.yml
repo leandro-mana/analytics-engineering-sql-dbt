@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: stg_stripe__payments
+    description: Staged payment data with renamed columns, payment type classification, and amount conversion.
+    columns:
+      - name: payment_id
+        description: Primary key.
+        tests:
+          - unique
+          - not_null
+      - name: order_id
+        description: Foreign key to stg_jaffle_shop__orders.
+      - name: payment_method
+        description: Original payment method from Stripe.
+      - name: payment_type
+        description: Classified as credit or cash.
+      - name: status
+        description: Payment status.
+      - name: amount
+        description: Payment amount in dollars (converted from cents).
+      - name: is_completed_payment
+        description: Whether the payment was successful.
+      - name: created_date
+        description: Date the payment was created.

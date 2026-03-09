@@ -1,0 +1,9 @@
+customer_id,name,date_birth,email_address,phone_number,country
+1,John Smith,1985-03-15,john.smith@email.com,+1-555-0101,USA
+2,Emma Johnson,1990-07-22,emma.j@email.com,+1-555-0102,USA
+3,Sophia Garcia,1988-11-30,sophia.g@email.com,+44-555-0103,UK
+4,Liam Brown,1992-01-18,liam.b@email.com,+44-555-0104,UK
+5,Olivia Wilson,1995-05-10,olivia.w@email.com,+61-555-0105,Australia
+6,Noah Davis,1987-09-25,noah.d@email.com,+1-555-0106,USA
+7,Ava Martinez,1993-12-08,ava.m@email.com,+34-555-0107,Spain
+8,William Taylor,1991-06-14,william.t@email.com,+1-555-0108,USA

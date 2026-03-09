@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: omnichannel
+    schema: public_raw
+    description: Raw omnichannel data loaded via dbt seeds.
+    tables:
+      - name: raw_channels
+        description: Sales and marketing channels.
+      - name: raw_omni_customers
+        description: Customer information.
+      - name: raw_products
+        description: Product catalog.
+      - name: raw_purchase_history
+        description: Customer purchase transactions.
+      - name: raw_visit_history
+        description: Customer channel visit history.

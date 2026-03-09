@@ -1,0 +1,40 @@
+[tool.poetry]
+name = "analytics-engineering-sql-dbt"
+version = "0.1.0"
+description = "Study notes and hands-on dbt project — Analytics Engineering with SQL and dbt (O'Reilly, 2023)"
+authors = ["Leandro Mana <leandromana@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+dbt-core = "^1.9"
+dbt-postgres = "^1.9"
+
+[tool.poetry.group.dev.dependencies]
+sqlfluff = "^3.0"
+pre-commit = "^4.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.sqlfluff.core]
+dialect = "postgres"
+templater = "dbt"
+max_line_length = 120
+rules = "all"
+
+[tool.sqlfluff.rules.capitalisation.keywords]
+capitalisation_policy = "upper"
+
+[tool.sqlfluff.rules.capitalisation.identifiers]
+capitalisation_policy = "lower"
+
+[tool.sqlfluff.rules.capitalisation.functions]
+capitalisation_policy = "upper"
+
+[tool.sqlfluff.rules.capitalisation.literals]
+capitalisation_policy = "upper"
+
+[tool.sqlfluff.rules.capitalisation.types]
+capitalisation_policy = "upper"

@@ -1,0 +1,71 @@
+version: 2
+
+models:
+  - name: dim_omni_channels
+    description: Channel dimension for omnichannel analytics (website, mobile app, Instagram).
+    columns:
+      - name: sk_channel
+        description: Surrogate key.
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_omni_customers
+    description: Customer dimension with profile information.
+    columns:
+      - name: sk_customer
+        description: Surrogate key.
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_omni_products
+    description: Product dimension with pricing information.
+    columns:
+      - name: sk_product
+        description: Surrogate key.
+        tests:
+          - unique
+          - not_null
+
+  - name: fct_purchase_history
+    description: >
+      Purchase fact table — one row per transaction.
+      Includes gross and net amounts (after discount).
+    columns:
+      - name: sk_customer
+        description: Surrogate key for customer dimension.
+        tests:
+          - relationships:
+              to: ref('dim_omni_customers')
+              field: sk_customer
+      - name: sk_channel
+        description: Surrogate key for channel dimension.
+        tests:
+          - relationships:
+              to: ref('dim_omni_channels')
+              field: sk_channel
+      - name: sk_product
+        description: Surrogate key for product dimension.
+        tests:
+          - relationships:
+              to: ref('dim_omni_products')
+              field: sk_product
+
+  - name: fct_visit_history
+    description: >
+      Visit fact table — one row per channel visit.
+      Includes visit duration in minutes.
+    columns:
+      - name: sk_customer
+        description: Surrogate key for customer dimension.
+        tests:
+          - relationships:
+              to: ref('dim_omni_customers')
+              field: sk_customer
+      - name: sk_channel
+        description: Surrogate key for channel dimension.
+        tests:
+          - relationships:
+              to: ref('dim_omni_channels')
+              field: sk_channel
